@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box; 
+    font-size: 0px;
+}
+
+.lightPink {
+    height: 200px;
+    border-style: solid;
+    border-color:#FFFFFF;
+    background-color:#F5C6D6;
+}
+
+.darkPinkOne {
+    height: 200px;
+    border-style: solid;
+    border-color:#FFFFFF;
+    background-color:#EE2E84;
+}
+
+.darkPinkTwo {
+    height: 200px;
+    border-style: solid;
+    border-color:#FFFFFF;
+    background-color:#EE2E84;
+}
+
+.darkPinkThree {
+    height: 200px;
+    border-style: solid;
+    border-color:#FFFFFF;
+    background-color:#EE2E84;
+}
+
+.darkPinkFour {
+    height: 200px;
+    border-style: solid;
+    border-color:#FFFFFF;
+    background-color:#EE2E84;
+}
+
+.lightBlueOne{
+    height: 200px;
+    border-style: solid;
+    border-color:#FFFFFF;
+    background-color:#85CFD8
+}
+
+.lightBlueTwo{
+    height: 200px;
+    border-style: solid;
+    border-color:#FFFFFF;
+    background-color:#85CFD8
+}
+
+.limeGreen{
+    height: 200px;
+    border-style: solid;
+    border-color:#FFFFFF;
+    background-color:#8DC63F;
+}
+
+.orange{
+    height: 200px;
+    border-style: solid;
+    border-color:#FFFFFF;
+    background-color:#E76E34;
+}
+
+@media (min-width:768px){
+
+    .darkPinkChild{
+        display: inline-block;
+    }
+
+    .lightPink {
+        height: 200px;
+        border-style: solid;
+        border-color:#FFFFFF;
+        background-color:#F5C6D6;
+    }
+
+    .darkPinkOne {
+        height: 200px;
+        width:25%;
+        border-style: solid;
+        border-color:#FFFFFF;
+        background-color:#EE2E84;
+    }
+    
+    .darkPinkTwo {
+        height: 200px;
+        width:25%;
+        border-style: solid;
+        border-color:#FFFFFF;
+        background-color:#EE2E84;
+    }
+    
+    .darkPinkThree {
+        height: 200px;
+        width:25%;
+        border-style: solid;
+        border-color:#FFFFFF;
+        background-color:#EE2E84;
+    }
+    
+    .darkPinkFour {
+        height: 200px;
+        width:25%;
+        border-style: solid;
+        border-color:#FFFFFF;
+        background-color:#EE2E84;
+    }
+    .lightBlueChild{
+        display: inline-block;
+    }
+
+    .lightBlueOne{
+        height: 200px;
+        width:50%;
+        border-style: solid;
+        border-color:#FFFFFF;
+        background-color:#85CFD8
+    }
+    
+    .lightBlueTwo{
+        height: 200px;
+        width:50%;
+        border-style: solid;
+        border-color:#FFFFFF;
+        background-color:#85CFD8
+    }
+
+    .child{
+        display:inline-block;
+    }
+
+    .limeGreen{
+        height: 200px;
+        width:75%;
+        border-style: solid;
+        border-color:#FFFFFF;
+        background-color:#8DC63F;
+    }
+    
+    .orange{
+        height:200px;
+        width:25%;
+        border-style: solid;
+        border-color:#FFFFFF;
+        background-color:#E76E34;
+    }
+}

@@ -1,0 +1,211 @@
+.franceFlagOne{
+    position:absolute;
+    height: 300px;
+    width: 200px;
+    border-style: solid;
+    border-color: #0050A4;
+    background-color: #0050A4;
+    border-width: 10px;
+}
+
+.franceFlagTwo{
+    position:absolute;
+    left:200px;
+    height: 300px;
+    width: 200px;
+    border-style: solid;
+    border-color:#FFFFFF;
+    background-color:#FFFFFF;
+    border-width: 10px;
+}
+
+.franceFlagThree{
+    position:absolute;
+    left:400px;
+    height: 300px;
+    width: 200px;
+    border-style: solid;
+    border-color: #ef4135;;
+    background-color:#ef4135;
+    border-width: 10px;
+}
+
+.germanyFlagOne{
+    position:relative;
+    height: 150px;
+    width: 500px;
+    border-style: solid;
+    border-color:#000000;
+    background-color: #000000;
+    border-width: 10px;
+}
+
+.germanyFlagTwo{
+    position:relative;
+    height: 150px;
+    width: 500px;
+    border-style: solid;
+    border-color:#DD0000;
+    background-color:#DD0000;
+    border-width: 10px;
+}
+
+.germanyFlagThree{
+    position:relative;
+    height: 150px;
+    width: 500px;
+    border-style: solid;
+    border-color:#FFCE00;
+    background-color: #FFCE00;
+    border-width: 10px;
+}
+
+.madagascarFlagOne{
+    position:relative;
+    left:250px;
+    height: 150px;
+    width: 250px;
+    border-style: solid;
+    border-color:#FC3D32;
+    background-color:#FC3D32;
+    border-width: 10px;
+}
+
+.madagascarFlagTwo{
+    position:relative;
+    left: 250px;
+    height: 150px;
+    width: 250px;
+    border-style: solid;
+    border-color:#007E3A;
+    background-color:#007E3A;
+    border-width: 10px;
+}
+
+.switzerlandFlagOne{
+    position: absolute;
+    left: 200px;
+    height: 400px;
+    width: 125px;
+    border-top-style:solid;
+    border-bottom-style:solid;
+    border-top-color:#FF0000;
+    border-bottom-color:#FF0000;
+    background-color: #FFFFFF;
+    border-top-width: 63px;
+}
+
+.switzerlandFlagTwo{
+    position: absolute;
+    top: 200px;
+    height: 125px;
+    width: 400px;
+    border-left-style:solid;
+    border-left-color: #FF0000;
+    background-color: #FFFFFF;
+    border-left-width: 63px;
+}
+
+.switzerlandFlagThree{
+    height: 500px;
+    width: 500px;
+    border-style: solid;
+    border-color:#FF0000;
+    background-color:#FF0000;
+    border-width: 10px;
+}
+
+.sweedenFlagOne{
+    position:absolute;
+    left: 180px;
+    height:500px;
+    width:100px;
+    background-color: #FFCD00;
+}
+
+.sweedenFlagTwo{
+    position:absolute;
+    top: 200px;
+    height:100px;
+    width:650px;
+    background-color: #FFCD00;
+}
+
+.sweedenFlagThree{
+    height: 500px;
+    width: 650px;
+    background-color: #006aa8; 
+}
+
+.gambiaFlagOne{
+    height: 150px;
+    width: 500px;
+    background-color:#CE1126;
+}
+
+.gambiaFlagTwo{
+    height: 150px;
+    width: 500px;
+    background-color:#FFFFFF;
+}
+
+.gambiaFlagThree{
+    height: 150px;
+    width: 500px;
+    background-color:#3A7728;
+}
+
+.gambiaFlagFour{
+    position: absolute;
+    top:185px;
+    height: 100px;
+    width: 500px;
+    background-color:#0C1C8C;
+}
+
+.japanFlagOne{
+    height: 500px;
+    width: 500px;
+    border-style: solid;
+    border-color: lightgrey;
+    background-color: #FFFFFF;
+}
+
+.japanFlagTwo{
+    position: absolute;
+    top: 125px;
+    left: 125px;
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    background-color: #be0029;
+    border-color: #be0029;
+}
+
+.nigerFlagOne{
+    height:150px;
+    width:500px;
+    background-color: #e05206
+}
+
+.nigerFlagTwo{
+    height:150px;
+    width:500px;
+    background-color: #FFFFFF;
+}
+
+.nigerFlagThree{
+    height: 150px;
+    width:500px;
+    background-color: #0db02b
+}
+
+.nigerFlagFour{
+    position:absolute;
+    top:170px;
+    left:200px;
+    border-radius:50%;
+    height:125px;
+    width: 125px;
+    background-color:#e05206;
+}

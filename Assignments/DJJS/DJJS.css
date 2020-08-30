@@ -1,0 +1,7 @@
+#square{
+    height:500px;
+    width:500px;
+    border:10px solid black;
+    background-color:gray;
+    margin:auto;
+}

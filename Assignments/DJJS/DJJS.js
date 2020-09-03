@@ -23,3 +23,28 @@ var square = document.getElementById("square")
 square.addEventListener("scroll", function() {
     square.style.backgroundColor = "orange";
 })
+
+var square = document.getElementById("square")
+document.addEventListener("keypress", function(event) {
+    console.log(event.which)
+
+    if (event.keyCode === 114 || event.keyCode === 82) {
+        square.style.backgroundColor = "red";
+    }
+
+    if (event.keyCode === 98 || event.keyCode === 66) {
+        square.style.backgroundColor = "blue";
+    }
+
+    if (event.keyCode === 103 || event.keyCode === 71) {
+        square.style.backgroundColor = "green";
+    }
+
+    if (event.keyCode === 121 || event.keyCode === 89) {
+        square.style.backgroundColor = "yellow";
+    }
+
+    if (event.keyCode === 111 || event.keyCode === 79) {
+        square.style.backgroundColor = "orange";
+    }
+})

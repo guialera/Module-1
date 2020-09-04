@@ -1,3 +1,5 @@
+//Qualifier//
+
 var header = document.getElementById("header")
 
 header.textContent = "JavaScript Made This!!"
@@ -26,6 +28,8 @@ newDiv.append(additionalP)
 additionalP.style.fontSize = "20px"
 additionalP.style.color = "black"
 
+//Bronze//
+
 var messageLeft = document.getElementsByClassName("message left")
 messageLeft[0].textContent = "Hello!"
 messageLeft[1].textContent = "What was Wenger thinking sending Walcott in that early?"
@@ -51,6 +55,8 @@ clearPressed.addEventListener("click", function(){
     messageRight[0].remove()
 })
 
+//Silver//
+
 var mainColor = document.getElementById("main")
 
 var colorStyle = document.getElementById("theme-drop-down")
@@ -72,4 +78,27 @@ var colorStyle = document.getElementById("theme-drop-down")
     }
 })
 
+//Gold//
 
+var newMessageButton = document.getElementsByTagName("button")
+
+newMessageButton[1].addEventListener("click", function(event){
+    event.preventDefault()
+
+    console.log("button is clicked")
+    
+    var newDivMessage = document.createElement("div")
+    newDivMessage = document.getElementById("input")
+    newDivMessage.textContent = this.value[2]
+    newDivMessage.style.alignSelf = "flexStart"
+    newDivMessage.style.backgroundColor = "burlywood"
+    
+    var newMessage = document.getElementById("main").getElementsByClassName("messages")[0]
+    newMessage.append(newDivMessage)
+
+    var clearPressed = document.getElementById("clear-button") 
+    clearPressed.addEventListener("click", function(){
+
+    newDivMessage.remove()
+})
+})

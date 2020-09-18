@@ -58,18 +58,16 @@ stringFunction(inputString)
 
 //Optional Code Challenge
 
-function stringCapitalizeFunction() {
-    for (i = 0; i < initialString.length; i++) {
-        if (initialString[i] === " ")
-            var whiteSpace = initialString.indexOf(" ")
-            var newString = initialString.slice(0, whiteSpace)
-            var newStringTwo = initialString.slice(whiteSpace+1)
-        console.log(initialString[i])
+function stringCapitalFunction() {
+    var capitalStringArr = []
+    var initialStringSplit = initialString.split(" ")
+    for (var i = 0; i < initialStringSplit.length; i++) {
+        capitalStringArr.push(initialStringSplit[i].charAt(0).toUpperCase() + initialStringSplit[i].slice(1))
     }
-    console.log(newString)
-    console.log(newStringTwo)
+    var capitalString = capitalStringArr.join(" ")
+    console.log(capitalString)
 }
 
-var initialString = "we like coffee!"
+var initialString = "we like coffee alot!"
 
-stringCapitalizeFunction(initialString)
+stringCapitalFunction(initialString) 

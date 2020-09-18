@@ -17,7 +17,7 @@ var homerSimpson = new Employee("Homer Simpson", "Nuclear Safety Inspector", 500
 
 var bobBelcher = new Employee("Bob Belcher", "Burger Chef", 30000, this.status)
 
-var bender = new Employee("Bender Bending Rodriguez", "Delivery Driver", 40000, "Contract")
+var bender = new Employee("Bender Bending Rodriguez", "Delivery Driver", 40000, this.status)
 
 bender.status = "Contract"
 

@@ -35,7 +35,7 @@ function walkingAdventure() {
         }
     }
 
-    console.log(results)
+    //console.log(results)
 }
 
 function enemyAttack() {
@@ -92,11 +92,60 @@ function enemyAttack() {
 }
 
 function attackAction(){
-    console.log("Attack occurred!")
+    var wildDreams = [100]
+    var wildDreamsDamages =[]
+
+    var deadlyChances = [70]
+    var deadlyChancesDamages = []
+
+    var unforseenDirections = [50]
+    var unforseenDirectionsDamages = []
+
+    var misplacedTrust = [40]
+    var misplacedTrusDamages = []
+
+    var damageAmount = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+    var damageAmountRandom = Math.floor(Math.random() * damageAmount.length)
+
+    if (damageAmountRandom === 0){
+        console.log(damageAmount[0])
+    } else if (damageAmountRandom === 1){
+        console.log(damageAmount[1])
+    } else if (damageAmountRandom === 2){
+        console.log(damageAmount[2])
+    } else if (damageAmountRandom === 3){
+        console.log(damageAmount[3])
+    } else if (damageAmountRandom === 4){
+        console.log(damageAmount[4])
+    } else if (damageAmountRandom === 5){
+        console.log(damageAmount[5])
+    } else if (damageAmountRandom === 6){
+        console.log(damageAmount[6])
+    } else if (damageAmountRandom === 7){
+        console.log(damageAmount[7])
+    } else if (damageAmountRandom === 8){
+        console.log(damageAmount[8])
+    } else if (damageAmountRandom === 9){
+        console.log(damageAmount[9])
+    }
 }
 
 function fleeAction(){
-    console.log("Flee occurred!")
+    var fleeAmount = ["Flee", "Cannot Flee"]
+    var fleeAmountRandom = Math.floor(Math.random() * fleeAmount.length)
+
+    if (fleeAmountRandom === 0){
+        console.log("You escaped")
+        walkingAdventure()
+    } else if (fleeAmountRandom === 1){
+        console.log("You cannot escape! You must attack!")
+        var fleeOrAttack = readlineSync.question("Would you like to try and flee again or just attack? Flee or Attack? ")
+        if (fleeOrAttack === "Flee"){
+            fleeAction()
+        } else if (fleeOrAttack === "Attack"){
+            attackAction()
+        }
+    }
 }
 
 var start = "This function works!"

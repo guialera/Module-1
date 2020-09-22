@@ -49,40 +49,40 @@ function enemyAttack() {
         var attackQuestion = readlineSync.question("Would you like to flee or attack? Attack or Flee? ")
         if (attackQuestion === "Attack"){
             console.log("Attack")
-            attackAction()
+            wildDreamsAttackAction()
         } else if (attackQuestion === "Flee"){
             console.log("Flee")
-            fleeAction()
+            wildDreamsFleeAction()
         }
     } else if (enemyRandom === 1){
         console.log(enemy[1] + " has attacked you!")
         var attackQuestion = readlineSync.question("Would you like to flee or attack? Attack or Flee? ")
         if (attackQuestion === "Attack"){
             console.log("Attack")
-            attackAction()
+            deadlyChancesAttackAction()
         } else if (attackQuestion === "Flee"){
             console.log("Flee")
-            fleeAction()
+            deadlyChancesFleeAction()
         }
     } else if (enemyRandom === 2){
         console.log(enemy[2] + " has attacked you!")
         var attackQuestion = readlineSync.question("Would you like to flee or attack? Attack or Flee? ")
         if (attackQuestion === "Attack"){
             console.log("Attack")
-            attackAction()
+            unforseenDirectionsAttackAction()
         } else if (attackQuestion === "Flee"){
             console.log("Flee")
-            fleeAction()
+            unforseenDirectionsFleeAction()
         }
     } else if (enemyRandom === 3){
         console.log(enemy[3] + " has attacked you!")
         var attackQuestion = readlineSync.question("Would you like to flee or attack? Attack or Flee? ")
         if (attackQuestion === "Attack"){
             console.log("Attack")
-            attackAction()
+            misplacedTrustAttackAction()
         } else if (attackQuestion === "Flee"){
             console.log("Flee")
-            fleeAction()
+            misplacedTrustFleeAction()
         }
     }
 
@@ -91,15 +91,104 @@ function enemyAttack() {
     }
 }
 
-function attackAction(){
+function wildDreamsAttackAction(){
+    console.log("Wild Dreams HP")
+
     var wildDreams = [100]
     var wildDreamsDamages =[]
 
+    var damageAmount = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+    var damageAmountRandom = Math.floor(Math.random() * damageAmount.length)
+
+    if (damageAmountRandom === 0){
+        console.log(damageAmount[0])
+    } else if (damageAmountRandom === 1){
+        console.log(damageAmount[1])
+    } else if (damageAmountRandom === 2){
+        console.log(damageAmount[2])
+    } else if (damageAmountRandom === 3){
+        console.log(damageAmount[3])
+    } else if (damageAmountRandom === 4){
+        console.log(damageAmount[4])
+    } else if (damageAmountRandom === 5){
+        console.log(damageAmount[5])
+    } else if (damageAmountRandom === 6){
+        console.log(damageAmount[6])
+    } else if (damageAmountRandom === 7){
+        console.log(damageAmount[7])
+    } else if (damageAmountRandom === 8){
+        console.log(damageAmount[8])
+    } else if (damageAmountRandom === 9){
+        console.log(damageAmount[9])
+    }
+}
+
+function deadlyChancesAttackAction(){
+    console.log("Deadly Chances HP")
+   
     var deadlyChances = [70]
     var deadlyChancesDamages = []
 
+    var damageAmount = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+    var damageAmountRandom = Math.floor(Math.random() * damageAmount.length)
+
+    if (damageAmountRandom === 0){
+        console.log(damageAmount[0])
+    } else if (damageAmountRandom === 1){
+        console.log(damageAmount[1])
+    } else if (damageAmountRandom === 2){
+        console.log(damageAmount[2])
+    } else if (damageAmountRandom === 3){
+        console.log(damageAmount[3])
+    } else if (damageAmountRandom === 4){
+        console.log(damageAmount[4])
+    } else if (damageAmountRandom === 5){
+        console.log(damageAmount[5])
+    } else if (damageAmountRandom === 6){
+        console.log(damageAmount[6])
+    } else if (damageAmountRandom === 7){
+        console.log(damageAmount[7])
+    } else if (damageAmountRandom === 8){
+        console.log(damageAmount[8])
+    } else if (damageAmountRandom === 9){
+        console.log(damageAmount[9])
+    }
+}
+
+function unforseenDirectionsAttackAction(){
+    console.log("Unforseen Directions HP")
+    
     var unforseenDirections = [50]
     var unforseenDirectionsDamages = []
+
+    var damageAmount = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+    var damageAmountRandom = Math.floor(Math.random() * damageAmount.length)
+
+    if (damageAmountRandom === 0){
+        console.log(damageAmount[0])
+    } else if (damageAmountRandom === 1){
+        console.log(damageAmount[1])
+    } else if (damageAmountRandom === 2){
+        console.log(damageAmount[2])
+    } else if (damageAmountRandom === 3){
+        console.log(damageAmount[3])
+    } else if (damageAmountRandom === 4){
+        console.log(damageAmount[4])
+    } else if (damageAmountRandom === 5){
+        console.log(damageAmount[5])
+    } else if (damageAmountRandom === 6){
+        console.log(damageAmount[6])
+    } else if (damageAmountRandom === 7){
+        console.log(damageAmount[7])
+    } else if (damageAmountRandom === 8){
+        console.log(damageAmount[8])
+    } else if (damageAmountRandom === 9){
+        console.log(damageAmount[9])
+    }
+}
+
+function misplacedTrustAttackAction(){
+    console.log("Misplaced Trust HP")
 
     var misplacedTrust = [40]
     var misplacedTrusDamages = []
@@ -130,7 +219,9 @@ function attackAction(){
     }
 }
 
-function fleeAction(){
+function wildDreamsFleeAction(){
+    console.log("Wild Dreams Flee")
+
     var fleeAmount = ["Flee", "Cannot Flee"]
     var fleeAmountRandom = Math.floor(Math.random() * fleeAmount.length)
 
@@ -141,9 +232,69 @@ function fleeAction(){
         console.log("You cannot escape! You must attack!")
         var fleeOrAttack = readlineSync.question("Would you like to try and flee again or just attack? Flee or Attack? ")
         if (fleeOrAttack === "Flee"){
-            fleeAction()
+            wildDreamsFleeAction()
         } else if (fleeOrAttack === "Attack"){
-            attackAction()
+            wildDreamsAttackAction()
+        }
+    }
+}
+
+function deadlyChancesFleeAction(){
+    console.log("Deadly Chances Flee")
+
+    var fleeAmount = ["Flee", "Cannot Flee"]
+    var fleeAmountRandom = Math.floor(Math.random() * fleeAmount.length)
+
+    if (fleeAmountRandom === 0){
+        console.log("You escaped")
+        walkingAdventure()
+    } else if (fleeAmountRandom === 1){
+        console.log("You cannot escape! You must attack!")
+        var fleeOrAttack = readlineSync.question("Would you like to try and flee again or just attack? Flee or Attack? ")
+        if (fleeOrAttack === "Flee"){
+            deadlyChancesFleeAction()
+        } else if (fleeOrAttack === "Attack"){
+            deadlyChancesAttackAction()
+        }
+    }
+}
+
+function unforseenDirectionsFleeAction(){
+    console.log("Unforseen Directions Flee")
+
+    var fleeAmount = ["Flee", "Cannot Flee"]
+    var fleeAmountRandom = Math.floor(Math.random() * fleeAmount.length)
+
+    if (fleeAmountRandom === 0){
+        console.log("You escaped")
+        walkingAdventure()
+    } else if (fleeAmountRandom === 1){
+        console.log("You cannot escape! You must attack!")
+        var fleeOrAttack = readlineSync.question("Would you like to try and flee again or just attack? Flee or Attack? ")
+        if (fleeOrAttack === "Flee"){
+            unforseenDirectionsFleeAction()
+        } else if (fleeOrAttack === "Attack"){
+            unforseenDirectionsAttackAction()
+        }
+    }
+}
+
+function misplacedTrustFleeAction(){
+    console.log("Misplaced Trust Flee")
+    
+    var fleeAmount = ["Flee", "Cannot Flee"]
+    var fleeAmountRandom = Math.floor(Math.random() * fleeAmount.length)
+
+    if (fleeAmountRandom === 0){
+        console.log("You escaped")
+        walkingAdventure()
+    } else if (fleeAmountRandom === 1){
+        console.log("You cannot escape! You must attack!")
+        var fleeOrAttack = readlineSync.question("Would you like to try and flee again or just attack? Flee or Attack? ")
+        if (fleeOrAttack === "Flee"){
+            misplacedTrustFleeAction()
+        } else if (fleeOrAttack === "Attack"){
+            misplacedTrustAttackAction()
         }
     }
 }

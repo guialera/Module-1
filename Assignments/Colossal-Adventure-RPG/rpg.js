@@ -26,7 +26,7 @@ function walkingAdventure() {
     } else {
         console.log("Continue walking!")
 
-        var walkingAgain = readlineSync.question("Would you like to continue walking? ")
+        var walkingAgain = readlineSync.question("Would you like to continue walking? Yes or No? ")
 
         if (walkingAgain === "Yes") {
             return walkingAdventure()
@@ -46,12 +46,44 @@ function enemyAttack() {
 
     if (enemyRandom === 0){
         console.log(enemy[0] + " has attacked you!")
+        var attackQuestion = readlineSync.question("Would you like to flee or attack? Attack or Flee? ")
+        if (attackQuestion === "Attack"){
+            console.log("Attack")
+            attackAction()
+        } else if (attackQuestion === "Flee"){
+            console.log("Flee")
+            fleeAction()
+        }
     } else if (enemyRandom === 1){
         console.log(enemy[1] + " has attacked you!")
+        var attackQuestion = readlineSync.question("Would you like to flee or attack? Attack or Flee? ")
+        if (attackQuestion === "Attack"){
+            console.log("Attack")
+            attackAction()
+        } else if (attackQuestion === "Flee"){
+            console.log("Flee")
+            fleeAction()
+        }
     } else if (enemyRandom === 2){
         console.log(enemy[2] + " has attacked you!")
+        var attackQuestion = readlineSync.question("Would you like to flee or attack? Attack or Flee? ")
+        if (attackQuestion === "Attack"){
+            console.log("Attack")
+            attackAction()
+        } else if (attackQuestion === "Flee"){
+            console.log("Flee")
+            fleeAction()
+        }
     } else if (enemyRandom === 3){
         console.log(enemy[3] + " has attacked you!")
+        var attackQuestion = readlineSync.question("Would you like to flee or attack? Attack or Flee? ")
+        if (attackQuestion === "Attack"){
+            console.log("Attack")
+            attackAction()
+        } else if (attackQuestion === "Flee"){
+            console.log("Flee")
+            fleeAction()
+        }
     }
 
     for (var i = 0; i < enemy.length; i++) {
@@ -60,7 +92,11 @@ function enemyAttack() {
 }
 
 function attackAction(){
-    
+    console.log("Attack occurred!")
+}
+
+function fleeAction(){
+    console.log("Flee occurred!")
 }
 
 var start = "This function works!"

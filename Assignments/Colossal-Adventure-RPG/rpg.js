@@ -44,150 +44,232 @@ function enemyAttack() {
 
     var enemyRandom = Math.floor(Math.random() * enemyNumber.length)
 
-    if (enemyRandom === 0){
+    if (enemyRandom === 0) {
         console.log(enemy[0] + " has attacked you!")
         var attackQuestion = readlineSync.question("Would you like to flee or attack? Attack or Flee? ")
-        if (attackQuestion === "Attack"){
+        if (attackQuestion === "Attack") {
             console.log("Attack")
             wildDreamsAttackAction()
-        } else if (attackQuestion === "Flee"){
+        } else if (attackQuestion === "Flee") {
             console.log("Flee")
             wildDreamsFleeAction()
         }
-    } else if (enemyRandom === 1){
+    } else if (enemyRandom === 1) {
         console.log(enemy[1] + " has attacked you!")
         var attackQuestion = readlineSync.question("Would you like to flee or attack? Attack or Flee? ")
-        if (attackQuestion === "Attack"){
+        if (attackQuestion === "Attack") {
             console.log("Attack")
             deadlyChancesAttackAction()
-        } else if (attackQuestion === "Flee"){
+        } else if (attackQuestion === "Flee") {
             console.log("Flee")
             deadlyChancesFleeAction()
         }
-    } else if (enemyRandom === 2){
+    } else if (enemyRandom === 2) {
         console.log(enemy[2] + " has attacked you!")
         var attackQuestion = readlineSync.question("Would you like to flee or attack? Attack or Flee? ")
-        if (attackQuestion === "Attack"){
+        if (attackQuestion === "Attack") {
             console.log("Attack")
             unforseenDirectionsAttackAction()
-        } else if (attackQuestion === "Flee"){
+        } else if (attackQuestion === "Flee") {
             console.log("Flee")
             unforseenDirectionsFleeAction()
         }
-    } else if (enemyRandom === 3){
+    } else if (enemyRandom === 3) {
         console.log(enemy[3] + " has attacked you!")
         var attackQuestion = readlineSync.question("Would you like to flee or attack? Attack or Flee? ")
-        if (attackQuestion === "Attack"){
+        if (attackQuestion === "Attack") {
             console.log("Attack")
             misplacedTrustAttackAction()
-        } else if (attackQuestion === "Flee"){
+        } else if (attackQuestion === "Flee") {
             console.log("Flee")
             misplacedTrustFleeAction()
         }
     }
 
-    for (var i = 0; i < enemy.length; i++) {
+    //  for (var i = 0; i < enemy.length; i++) {
 
-    }
+    //}
 }
 
-function wildDreamsAttackAction(){
+function wildDreamsAttackAction() {
     console.log("Wild Dreams HP")
 
-    var wildDreams = [100]
-    var wildDreamsDamages =[]
+    var wildDreamsDamages = [100]
+    var playerHP = [80]
 
-    var damageAmount = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-    var damageAmountRandom = Math.floor(Math.random() * damageAmount.length)
+    var attackMode = [wdAttack(), playerAttack(), wdAttack(), playerAttack(), wdAttack(), playerAttack()]
 
-    if (damageAmountRandom === 0){
-        console.log(damageAmount[0])
-    } else if (damageAmountRandom === 1){
-        console.log(damageAmount[1])
-    } else if (damageAmountRandom === 2){
-        console.log(damageAmount[2])
-    } else if (damageAmountRandom === 3){
-        console.log(damageAmount[3])
-    } else if (damageAmountRandom === 4){
-        console.log(damageAmount[4])
-    } else if (damageAmountRandom === 5){
-        console.log(damageAmount[5])
-    } else if (damageAmountRandom === 6){
-        console.log(damageAmount[6])
-    } else if (damageAmountRandom === 7){
-        console.log(damageAmount[7])
-    } else if (damageAmountRandom === 8){
-        console.log(damageAmount[8])
-    } else if (damageAmountRandom === 9){
-        console.log(damageAmount[9])
+    for (var i = 0; i < attackMode.length; i++) {
+        if (wildDreamsDamages[0] > 0 && playerHP[0] > 0) {
+            console.log("Continue the attack.")
+        } else if (wildDreamsDamages[0] <= 0) {
+            console.log(name + " you defeated Wild Dreams! You may continue on your adventure.")
+            return walkingAdventure()
+        } else if (playerHP[0] <= 0) {
+            console.log(name + " sorry you have been defeated! Please begin you adevnture again.")
+            return beginQuestion
+        }  
+    } 
+    
+    function wdAttack() {
+        var damageAmount = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+        var damageAmountRandom = Math.floor(Math.random() * damageAmount.length)
+
+        if (damageAmountRandom === 0) {
+            wildDreamsDamages.unshift(wildDreamsDamages[0] - damageAmount[0])
+            console.log("You inflicted " + damageAmount[0] + " HP.")
+            //console.log(wildDreamsDamages)
+        } else if (damageAmountRandom === 1) {
+            wildDreamsDamages.unshift(wildDreamsDamages[0] - damageAmount[1])
+            console.log("You inflicted " + damageAmount[1] + " HP.")
+            //console.log(wildDreamsDamages)
+        } else if (damageAmountRandom === 2) {
+            wildDreamsDamages.unshift(wildDreamsDamages[0] - damageAmount[2])
+            console.log("You inflicted " + damageAmount[2] + " HP.")
+            //console.log(wildDreamsDamages)
+        } else if (damageAmountRandom === 3) {
+            wildDreamsDamages.unshift(wildDreamsDamages[0] - damageAmount[3])
+            console.log("You inflicted " + damageAmount[3] + " HP.")
+            //console.log(wildDreamsDamages)
+        } else if (damageAmountRandom === 4) {
+            wildDreamsDamages.unshift(wildDreamsDamages[0] - damageAmount[4])
+            console.log("You inflicted " + damageAmount[4] + " HP.")
+            //console.log(wildDreamsDamages)
+        } else if (damageAmountRandom === 5) {
+            wildDreamsDamages.unshift(wildDreamsDamages[0] - damageAmount[5])
+            console.log("You inflicted " + damageAmount[5] + " HP.")
+            //console.log(wildDreamsDamages)
+        } else if (damageAmountRandom === 6) {
+            //console.log(damageAmount[6])
+            wildDreamsDamages.unshift(wildDreamsDamages[0] - damageAmount[6])
+            console.log("You inflicted " + damageAmount[6] + " HP.")
+            //console.log(wildDreamsDamages)
+        } else if (damageAmountRandom === 7) {
+            //console.log(damageAmount[7])
+            wildDreamsDamages.unshift(wildDreamsDamages[0] - damageAmount[7])
+            console.log("You inflicted " + damageAmount[7] + " HP.")
+            //console.log(wildDreamsDamages)
+        } else if (damageAmountRandom === 8) {
+            //console.log(damageAmount[8])
+            wildDreamsDamages.unshift(wildDreamsDamages[0] - damageAmount[8])
+            console.log("You inflicted " + damageAmount[8] + " HP.")
+            //console.log(wildDreamsDamages)
+        } else if (damageAmountRandom === 9) {
+            //console.log(damageAmount[9])
+            wildDreamsDamages.unshift(wildDreamsDamages[0] - damageAmount[9])
+            console.log("You inflicted " + damageAmount[9] + " HP.")
+            //console.log(wildDreamsDamages)
+        }
     }
+    function playerAttack() {
+        var damageValue = [5, 10, 15, 20, 25, 30]
+        var damageValueRandom = Math.floor(Math.random() * damageValue.length)
+
+        if (damageValueRandom === 0) {
+            console.log(damageValue[0])
+            playerHP.unshift(playerHP[0] - damageValue[0])
+            console.log("You have lost " + damageValue[0] + " HP.")
+            //console.log(playerHP)
+        } else if (damageValueRandom === 1) {
+            console.log(damageValue[1])
+            playerHP.unshift(playerHP[0] - damageValue[1])
+            console.log("You have lost " + damageValue[1] + " HP.")
+            //console.log(playerHP)
+        } else if (damageValueRandom === 2) {
+            console.log(damageValue[2])
+            playerHP.unshift(playerHP[0] - damageValue[2])
+            console.log("You have lost " + damageValue[2] + " HP.")
+            //console.log(playerHP)
+        } else if (damageValueRandom === 3) {
+            console.log(damageValue[3])
+            playerHP.unshift(playerHP[0] - damageValue[3])
+            console.log("You have lost " + damageValue[3] + " HP.")
+            //console.log(playerHP)
+        } else if (damageValueRandom === 4) {
+            console.log(damageValue[4])
+            playerHP.unshift(playerHP[0] - damageValue[4])
+            console.log("You have lost " + damageValue[4] + " HP.")
+            //console.log(playerHP)
+        } else if (damageValueRandom === 5) {
+            console.log(damageValue[5])
+            playerHP.unshift(playerHP[0] - damageValue[5])
+            console.log("You have lost " + damageValue[5] + " HP.")
+            //console.log(playerHP)
+        } else if (damageValueRandom === 6) {
+            console.log(damageValue[6])
+            playerHP.unshift(playerHP[0] - damageValue[6])
+            console.log("You have lost " + damageValue[6] + " HP.")
+            //console.log(playerHP)
+        }
+    }
+
 }
 
-function deadlyChancesAttackAction(){
+function deadlyChancesAttackAction() {
     console.log("Deadly Chances HP")
-   
+
     var deadlyChances = [70]
     var deadlyChancesDamages = []
 
     var damageAmount = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
     var damageAmountRandom = Math.floor(Math.random() * damageAmount.length)
 
-    if (damageAmountRandom === 0){
+    if (damageAmountRandom === 0) {
         console.log(damageAmount[0])
-    } else if (damageAmountRandom === 1){
+    } else if (damageAmountRandom === 1) {
         console.log(damageAmount[1])
-    } else if (damageAmountRandom === 2){
+    } else if (damageAmountRandom === 2) {
         console.log(damageAmount[2])
-    } else if (damageAmountRandom === 3){
+    } else if (damageAmountRandom === 3) {
         console.log(damageAmount[3])
-    } else if (damageAmountRandom === 4){
+    } else if (damageAmountRandom === 4) {
         console.log(damageAmount[4])
-    } else if (damageAmountRandom === 5){
+    } else if (damageAmountRandom === 5) {
         console.log(damageAmount[5])
-    } else if (damageAmountRandom === 6){
+    } else if (damageAmountRandom === 6) {
         console.log(damageAmount[6])
-    } else if (damageAmountRandom === 7){
+    } else if (damageAmountRandom === 7) {
         console.log(damageAmount[7])
-    } else if (damageAmountRandom === 8){
+    } else if (damageAmountRandom === 8) {
         console.log(damageAmount[8])
-    } else if (damageAmountRandom === 9){
+    } else if (damageAmountRandom === 9) {
         console.log(damageAmount[9])
     }
 }
 
-function unforseenDirectionsAttackAction(){
+function unforseenDirectionsAttackAction() {
     console.log("Unforseen Directions HP")
-    
+
     var unforseenDirections = [50]
     var unforseenDirectionsDamages = []
 
     var damageAmount = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
     var damageAmountRandom = Math.floor(Math.random() * damageAmount.length)
 
-    if (damageAmountRandom === 0){
+    if (damageAmountRandom === 0) {
         console.log(damageAmount[0])
-    } else if (damageAmountRandom === 1){
+    } else if (damageAmountRandom === 1) {
         console.log(damageAmount[1])
-    } else if (damageAmountRandom === 2){
+    } else if (damageAmountRandom === 2) {
         console.log(damageAmount[2])
-    } else if (damageAmountRandom === 3){
+    } else if (damageAmountRandom === 3) {
         console.log(damageAmount[3])
-    } else if (damageAmountRandom === 4){
+    } else if (damageAmountRandom === 4) {
         console.log(damageAmount[4])
-    } else if (damageAmountRandom === 5){
+    } else if (damageAmountRandom === 5) {
         console.log(damageAmount[5])
-    } else if (damageAmountRandom === 6){
+    } else if (damageAmountRandom === 6) {
         console.log(damageAmount[6])
-    } else if (damageAmountRandom === 7){
+    } else if (damageAmountRandom === 7) {
         console.log(damageAmount[7])
-    } else if (damageAmountRandom === 8){
+    } else if (damageAmountRandom === 8) {
         console.log(damageAmount[8])
-    } else if (damageAmountRandom === 9){
+    } else if (damageAmountRandom === 9) {
         console.log(damageAmount[9])
     }
 }
 
-function misplacedTrustAttackAction(){
+function misplacedTrustAttackAction() {
     console.log("Misplaced Trust HP")
 
     var misplacedTrust = [40]
@@ -196,104 +278,104 @@ function misplacedTrustAttackAction(){
     var damageAmount = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
     var damageAmountRandom = Math.floor(Math.random() * damageAmount.length)
 
-    if (damageAmountRandom === 0){
+    if (damageAmountRandom === 0) {
         console.log(damageAmount[0])
-    } else if (damageAmountRandom === 1){
+    } else if (damageAmountRandom === 1) {
         console.log(damageAmount[1])
-    } else if (damageAmountRandom === 2){
+    } else if (damageAmountRandom === 2) {
         console.log(damageAmount[2])
-    } else if (damageAmountRandom === 3){
+    } else if (damageAmountRandom === 3) {
         console.log(damageAmount[3])
-    } else if (damageAmountRandom === 4){
+    } else if (damageAmountRandom === 4) {
         console.log(damageAmount[4])
-    } else if (damageAmountRandom === 5){
+    } else if (damageAmountRandom === 5) {
         console.log(damageAmount[5])
-    } else if (damageAmountRandom === 6){
+    } else if (damageAmountRandom === 6) {
         console.log(damageAmount[6])
-    } else if (damageAmountRandom === 7){
+    } else if (damageAmountRandom === 7) {
         console.log(damageAmount[7])
-    } else if (damageAmountRandom === 8){
+    } else if (damageAmountRandom === 8) {
         console.log(damageAmount[8])
-    } else if (damageAmountRandom === 9){
+    } else if (damageAmountRandom === 9) {
         console.log(damageAmount[9])
     }
 }
 
-function wildDreamsFleeAction(){
+function wildDreamsFleeAction() {
     console.log("Wild Dreams Flee")
 
     var fleeAmount = ["Flee", "Cannot Flee"]
     var fleeAmountRandom = Math.floor(Math.random() * fleeAmount.length)
 
-    if (fleeAmountRandom === 0){
+    if (fleeAmountRandom === 0) {
         console.log("You escaped")
         walkingAdventure()
-    } else if (fleeAmountRandom === 1){
+    } else if (fleeAmountRandom === 1) {
         console.log("You cannot escape! You must attack!")
         var fleeOrAttack = readlineSync.question("Would you like to try and flee again or just attack? Flee or Attack? ")
-        if (fleeOrAttack === "Flee"){
+        if (fleeOrAttack === "Flee") {
             wildDreamsFleeAction()
-        } else if (fleeOrAttack === "Attack"){
+        } else if (fleeOrAttack === "Attack") {
             wildDreamsAttackAction()
         }
     }
 }
 
-function deadlyChancesFleeAction(){
+function deadlyChancesFleeAction() {
     console.log("Deadly Chances Flee")
 
     var fleeAmount = ["Flee", "Cannot Flee"]
     var fleeAmountRandom = Math.floor(Math.random() * fleeAmount.length)
 
-    if (fleeAmountRandom === 0){
+    if (fleeAmountRandom === 0) {
         console.log("You escaped")
         walkingAdventure()
-    } else if (fleeAmountRandom === 1){
+    } else if (fleeAmountRandom === 1) {
         console.log("You cannot escape! You must attack!")
         var fleeOrAttack = readlineSync.question("Would you like to try and flee again or just attack? Flee or Attack? ")
-        if (fleeOrAttack === "Flee"){
+        if (fleeOrAttack === "Flee") {
             deadlyChancesFleeAction()
-        } else if (fleeOrAttack === "Attack"){
+        } else if (fleeOrAttack === "Attack") {
             deadlyChancesAttackAction()
         }
     }
 }
 
-function unforseenDirectionsFleeAction(){
+function unforseenDirectionsFleeAction() {
     console.log("Unforseen Directions Flee")
 
     var fleeAmount = ["Flee", "Cannot Flee"]
     var fleeAmountRandom = Math.floor(Math.random() * fleeAmount.length)
 
-    if (fleeAmountRandom === 0){
+    if (fleeAmountRandom === 0) {
         console.log("You escaped")
         walkingAdventure()
-    } else if (fleeAmountRandom === 1){
+    } else if (fleeAmountRandom === 1) {
         console.log("You cannot escape! You must attack!")
         var fleeOrAttack = readlineSync.question("Would you like to try and flee again or just attack? Flee or Attack? ")
-        if (fleeOrAttack === "Flee"){
+        if (fleeOrAttack === "Flee") {
             unforseenDirectionsFleeAction()
-        } else if (fleeOrAttack === "Attack"){
+        } else if (fleeOrAttack === "Attack") {
             unforseenDirectionsAttackAction()
         }
     }
 }
 
-function misplacedTrustFleeAction(){
+function misplacedTrustFleeAction() {
     console.log("Misplaced Trust Flee")
-    
+
     var fleeAmount = ["Flee", "Cannot Flee"]
     var fleeAmountRandom = Math.floor(Math.random() * fleeAmount.length)
 
-    if (fleeAmountRandom === 0){
+    if (fleeAmountRandom === 0) {
         console.log("You escaped")
         walkingAdventure()
-    } else if (fleeAmountRandom === 1){
+    } else if (fleeAmountRandom === 1) {
         console.log("You cannot escape! You must attack!")
         var fleeOrAttack = readlineSync.question("Would you like to try and flee again or just attack? Flee or Attack? ")
-        if (fleeOrAttack === "Flee"){
+        if (fleeOrAttack === "Flee") {
             misplacedTrustFleeAction()
-        } else if (fleeOrAttack === "Attack"){
+        } else if (fleeOrAttack === "Attack") {
             misplacedTrustAttackAction()
         }
     }

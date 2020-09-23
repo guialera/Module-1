@@ -230,11 +230,80 @@ var deadlyChancesDamages = [70]
 function deadlyChancesAttackAction() {
     console.log("Deadly Chances HP")
 
+    var dcAttackQuestion = readlineSync.question("Would like you to attack? ")
+
+    if (dcAttackQuestion === "Yes") {
+        dcAttack()
+        console.log(deadlyChancesDamages)
+        if (deadlyChancesDamages[0] <= 0) {
+            console.log(name + " you defeated Deadly Chances! You may continue on your adventure.")
+            deadlyChancesDamages.shift()
+            deadlyChancesDamages.unshift(100)
+            console.log(deadlyChancesDamages)
+            playerHP.unshift(playerHP[0] + 20)
+            console.log(name + " you have received 10 HP! Also you have received a magic stone!")
+            playerItems.push("Magic Stone")
+            return walkingAdventure()
+        } else if (deadlyChancesDamages[0] > 0 && playerHP[0] > 0) {
+            playerAttack()
+            console.log(playerHP)
+            if (playerHP[0] <= 0) {
+                console.log(name + " sorry you have been defeated! Please begin your adeventure again.")
+            } else deadlyChancesAttackAction()
+        }
+    }
+
     function dcAttack() {
 
         var damageAmount = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
         var damageAmountRandom = Math.floor(Math.random() * damageAmount.length)
 
+        if (damageAmountRandom === 0) {
+            deadlyChancesDamages.unshift(deadlyChancesDamages[0] - damageAmount[0])
+            console.log("You inflicted " + damageAmount[0] + " HP.")
+            //console.log(deadlyChancesDamages)
+        } else if (damageAmountRandom === 1) {
+            deadlyChancesDamages.unshift(deadlyChancesDamages[0] - damageAmount[1])
+            console.log("You inflicted " + damageAmount[1] + " HP.")
+            //console.log(deadlyChancesDamages)
+        } else if (damageAmountRandom === 2) {
+            deadlyChancesDamages.unshift(deadlyChancesDamages[0] - damageAmount[2])
+            console.log("You inflicted " + damageAmount[2] + " HP.")
+            //console.log(deadlyChancesDamages)
+        } else if (damageAmountRandom === 3) {
+            deadlyChancesDamages.unshift(deadlyChancesDamages[0] - damageAmount[3])
+            console.log("You inflicted " + damageAmount[3] + " HP.")
+            //console.log(deadlyChancesDamages)
+        } else if (damageAmountRandom === 4) {
+            deadlyChancesDamages.unshift(deadlyChancesDamages[0] - damageAmount[4])
+            console.log("You inflicted " + damageAmount[4] + " HP.")
+            //console.log(deadlyChancesDamages)
+        } else if (damageAmountRandom === 5) {
+            deadlyChancesDamages.unshift(deadlyChancesDamages[0] - damageAmount[5])
+            console.log("You inflicted " + damageAmount[5] + " HP.")
+            //console.log(deadlyChancesDamages)
+        } else if (damageAmountRandom === 6) {
+            //console.log(damageAmount[6])
+            deadlyChancesDamages.unshift(deadlyChancesDamages[0] - damageAmount[6])
+            console.log("You inflicted " + damageAmount[6] + " HP.")
+            //console.log(deadlyChancesDamages)
+        } else if (damageAmountRandom === 7) {
+            //console.log(damageAmount[7])
+            deadlyChancesDamages.unshift(deadlyChancesDamages[0] - damageAmount[7])
+            console.log("You inflicted " + damageAmount[7] + " HP.")
+            //console.log(deadlyChancesDamages)
+        } else if (damageAmountRandom === 8) {
+            //console.log(damageAmount[8])
+            deadlyChancesDamages.unshift(deadlyChancesDamages[0] - damageAmount[8])
+            console.log("You inflicted " + damageAmount[8] + " HP.")
+            //console.log(deadlyChancesDamages)
+        } else if (damageAmountRandom === 9) {
+            //console.log(damageAmount[9])
+            deadlyChancesDamages.unshift(deadlyChancesDamages[0] - damageAmount[9])
+            console.log("You inflicted " + damageAmount[9] + " HP.")
+            //console.log(deadlyChancesDamages)
+        }
+        /*
         if (damageAmountRandom === 0) {
             console.log(damageAmount[0])
         } else if (damageAmountRandom === 1) {
@@ -255,6 +324,48 @@ function deadlyChancesAttackAction() {
             console.log(damageAmount[8])
         } else if (damageAmountRandom === 9) {
             console.log(damageAmount[9])
+        }*/
+    }
+
+    function playerAttack() {
+        var damageValue = [5, 10, 15, 20, 25, 30]
+        var damageValueRandom = Math.floor(Math.random() * damageValue.length)
+
+        if (damageValueRandom === 0) {
+            console.log(damageValue[0])
+            playerHP.unshift(playerHP[0] - damageValue[0])
+            console.log("You have lost " + damageValue[0] + " HP.")
+            //console.log(playerHP)
+        } else if (damageValueRandom === 1) {
+            console.log(damageValue[1])
+            playerHP.unshift(playerHP[0] - damageValue[1])
+            console.log("You have lost " + damageValue[1] + " HP.")
+            //console.log(playerHP)
+        } else if (damageValueRandom === 2) {
+            console.log(damageValue[2])
+            playerHP.unshift(playerHP[0] - damageValue[2])
+            console.log("You have lost " + damageValue[2] + " HP.")
+            //console.log(playerHP)
+        } else if (damageValueRandom === 3) {
+            console.log(damageValue[3])
+            playerHP.unshift(playerHP[0] - damageValue[3])
+            console.log("You have lost " + damageValue[3] + " HP.")
+            //console.log(playerHP)
+        } else if (damageValueRandom === 4) {
+            console.log(damageValue[4])
+            playerHP.unshift(playerHP[0] - damageValue[4])
+            console.log("You have lost " + damageValue[4] + " HP.")
+            //console.log(playerHP)
+        } else if (damageValueRandom === 5) {
+            console.log(damageValue[5])
+            playerHP.unshift(playerHP[0] - damageValue[5])
+            console.log("You have lost " + damageValue[5] + " HP.")
+            //console.log(playerHP)
+        } else if (damageValueRandom === 6) {
+            console.log(damageValue[6])
+            playerHP.unshift(playerHP[0] - damageValue[6])
+            console.log("You have lost " + damageValue[6] + " HP.")
+            //console.log(playerHP)
         }
     }
 }

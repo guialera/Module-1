@@ -85,32 +85,53 @@ function enemyAttack() {
             misplacedTrustFleeAction()
         }
     }
-
-    //  for (var i = 0; i < enemy.length; i++) {
-
-    //}
 }
+
+var wildDreamsDamages = [100]
+var playerHP = [80]
+var playerItems = []
 
 function wildDreamsAttackAction() {
     console.log("Wild Dreams HP")
 
-    var wildDreamsDamages = [100]
-    var playerHP = [80]
+    var wdAttackQuestion = readlineSync.question("Would like you to attack? ")
 
-    var attackMode = [wdAttack(), playerAttack(), wdAttack(), playerAttack(), wdAttack(), playerAttack()]
-
-    for (var i = 0; i < attackMode.length; i++) {
-        if (wildDreamsDamages[0] > 0 && playerHP[0] > 0) {
-            console.log("Continue the attack.")
-        } else if (wildDreamsDamages[0] <= 0) {
+    if (wdAttackQuestion === "Yes") {
+        wdAttack()
+        console.log(wildDreamsDamages)
+        if (wildDreamsDamages[0] <= 0) {
             console.log(name + " you defeated Wild Dreams! You may continue on your adventure.")
+            wildDreamsDamages.shift()
+            wildDreamsDamages.unshift(100)
+            console.log(wildDreamsDamages)
+            playerHP.unshift(playerHP[0] + 20)
+            console.log(name + " you have received 20 HP! Also you have received potion!")
+            playerItems.push("Potion")
             return walkingAdventure()
-        } else if (playerHP[0] <= 0) {
-            console.log(name + " sorry you have been defeated! Please begin you adevnture again.")
-            return beginQuestion
-        }  
-    } 
-    
+        } else if (wildDreamsDamages[0] > 0 && playerHP[0] > 0) {
+            playerAttack()
+            console.log(playerHP)
+            if (playerHP[0] <= 0) {
+                console.log(name + " sorry you have been defeated! Please begin your adeventure again.")
+            } else wildDreamsAttackAction()
+        }
+    }
+
+    /*if (playerHP[0] <= 0) {
+        console.log(name + " sorry you have been defeated! Please begin your adevnture again.")
+        return beginQuestion
+    } else wdAttackQuestion
+
+    if (wildDreamsDamages[0] > 0 && playerHP[0] > 0) {
+        attackMode()
+    } else if (wildDreamsDamages[0] <= 0) {
+        console.log(name + " you defeated Wild Dreams! You may continue on your adventure.")
+        return walkingAdventure()
+    } else if (playerHP[0] <= 0) {
+        console.log(name + " sorry you have been defeated! Please begin you adevnture again.")
+        return beginQuestion
+    }*/
+
     function wdAttack() {
         var damageAmount = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
         var damageAmountRandom = Math.floor(Math.random() * damageAmount.length)
@@ -202,38 +223,39 @@ function wildDreamsAttackAction() {
             //console.log(playerHP)
         }
     }
-
 }
+
+var deadlyChancesDamages = [70]
 
 function deadlyChancesAttackAction() {
     console.log("Deadly Chances HP")
 
-    var deadlyChances = [70]
-    var deadlyChancesDamages = []
+    function dcAttack() {
 
-    var damageAmount = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-    var damageAmountRandom = Math.floor(Math.random() * damageAmount.length)
+        var damageAmount = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+        var damageAmountRandom = Math.floor(Math.random() * damageAmount.length)
 
-    if (damageAmountRandom === 0) {
-        console.log(damageAmount[0])
-    } else if (damageAmountRandom === 1) {
-        console.log(damageAmount[1])
-    } else if (damageAmountRandom === 2) {
-        console.log(damageAmount[2])
-    } else if (damageAmountRandom === 3) {
-        console.log(damageAmount[3])
-    } else if (damageAmountRandom === 4) {
-        console.log(damageAmount[4])
-    } else if (damageAmountRandom === 5) {
-        console.log(damageAmount[5])
-    } else if (damageAmountRandom === 6) {
-        console.log(damageAmount[6])
-    } else if (damageAmountRandom === 7) {
-        console.log(damageAmount[7])
-    } else if (damageAmountRandom === 8) {
-        console.log(damageAmount[8])
-    } else if (damageAmountRandom === 9) {
-        console.log(damageAmount[9])
+        if (damageAmountRandom === 0) {
+            console.log(damageAmount[0])
+        } else if (damageAmountRandom === 1) {
+            console.log(damageAmount[1])
+        } else if (damageAmountRandom === 2) {
+            console.log(damageAmount[2])
+        } else if (damageAmountRandom === 3) {
+            console.log(damageAmount[3])
+        } else if (damageAmountRandom === 4) {
+            console.log(damageAmount[4])
+        } else if (damageAmountRandom === 5) {
+            console.log(damageAmount[5])
+        } else if (damageAmountRandom === 6) {
+            console.log(damageAmount[6])
+        } else if (damageAmountRandom === 7) {
+            console.log(damageAmount[7])
+        } else if (damageAmountRandom === 8) {
+            console.log(damageAmount[8])
+        } else if (damageAmountRandom === 9) {
+            console.log(damageAmount[9])
+        }
     }
 }
 

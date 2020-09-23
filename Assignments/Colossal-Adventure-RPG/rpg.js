@@ -14,9 +14,9 @@ if (beginQuestion === "Yes") {
 
 var walking = readlineSync.question("Please press W! ")
 
-function walkingAdventure() {
+function walkingAdventure(){
     console.log(start)
-
+    
     var chances = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     var results = Math.floor(Math.random() * chances.length)
 
@@ -92,7 +92,7 @@ var playerHP = [80]
 var playerItems = []
 
 function wildDreamsAttackAction() {
-    console.log("Wild Dreams HP")
+    //console.log("Wild Dreams HP")
 
     var wdAttackQuestion = readlineSync.question("Would like you to attack? ")
 
@@ -103,9 +103,9 @@ function wildDreamsAttackAction() {
             console.log(name + " you defeated Wild Dreams! You may continue on your adventure.")
             wildDreamsDamages.shift()
             wildDreamsDamages.unshift(100)
-            console.log(wildDreamsDamages)
+            //console.log(wildDreamsDamages)
             playerHP.unshift(playerHP[0] + 5)
-            console.log(name + " you have received 5 HP! Also you have received potion!")
+            console.log(name + " you have received 5 HP! Also you have received potion! Your current HP is " + playerHP[0] + ".")
             playerItems.push("Potion")
             return walkingAdventure()
         } else if (wildDreamsDamages[0] > 0 && playerHP[0] > 0) {
@@ -187,39 +187,39 @@ function wildDreamsAttackAction() {
         var damageValueRandom = Math.floor(Math.random() * damageValue.length)
 
         if (damageValueRandom === 0) {
-            console.log(damageValue[0])
+            //console.log(damageValue[0])
             playerHP.unshift(playerHP[0] - damageValue[0])
-            console.log("You have lost " + damageValue[0] + " HP.")
+            console.log("Wild Dreams has attacked! You have lost " + damageValue[0] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 1) {
-            console.log(damageValue[1])
+            //console.log(damageValue[1])
             playerHP.unshift(playerHP[0] - damageValue[1])
-            console.log("You have lost " + damageValue[1] + " HP.")
+            console.log("Wild Dreams has attacked! You have lost " + damageValue[1] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 2) {
-            console.log(damageValue[2])
+            //console.log(damageValue[2])
             playerHP.unshift(playerHP[0] - damageValue[2])
-            console.log("You have lost " + damageValue[2] + " HP.")
+            console.log("Wild Dreams has attacked! You have lost " + damageValue[2] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 3) {
-            console.log(damageValue[3])
+            //console.log(damageValue[3])
             playerHP.unshift(playerHP[0] - damageValue[3])
-            console.log("You have lost " + damageValue[3] + " HP.")
+            console.log("Wild Dreams has attacked! You have lost " + damageValue[3] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 4) {
-            console.log(damageValue[4])
+            //console.log(damageValue[4])
             playerHP.unshift(playerHP[0] - damageValue[4])
-            console.log("You have lost " + damageValue[4] + " HP.")
+            console.log("Wild Dreams has attacked! You have lost " + damageValue[4] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 5) {
-            console.log(damageValue[5])
+            //console.log(damageValue[5])
             playerHP.unshift(playerHP[0] - damageValue[5])
-            console.log("You have lost " + damageValue[5] + " HP.")
+            console.log("Wild Dreams has attacked! You have lost " + damageValue[5] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 6) {
-            console.log(damageValue[6])
+            //console.log(damageValue[6])
             playerHP.unshift(playerHP[0] - damageValue[6])
-            console.log("You have lost " + damageValue[6] + " HP.")
+            console.log("Wild Dreams has attacked! You have lost " + damageValue[6] + " HP.")
             //console.log(playerHP)
         }
     }
@@ -228,7 +228,7 @@ function wildDreamsAttackAction() {
 var deadlyChancesDamages = [70]
 
 function deadlyChancesAttackAction() {
-    console.log("Deadly Chances HP")
+    //console.log("Deadly Chances HP")
 
     var dcAttackQuestion = readlineSync.question("Would like you to attack? ")
 
@@ -239,9 +239,9 @@ function deadlyChancesAttackAction() {
             console.log(name + " you defeated Deadly Chances! You may continue on your adventure.")
             deadlyChancesDamages.shift()
             deadlyChancesDamages.unshift(100)
-            console.log(deadlyChancesDamages)
+            //console.log(deadlyChancesDamages)
             playerHP.unshift(playerHP[0] + 5)
-            console.log(name + " you have received 5 HP! Also you have received a magic stone!")
+            console.log(name + " you have received 5 HP! Also you have received a magic stone! Your current HP is " + playerHP[0] + ".")
             playerItems.push("Magic Stone")
             return walkingAdventure()
         } else if (deadlyChancesDamages[0] > 0 && playerHP[0] > 0) {
@@ -332,39 +332,39 @@ function deadlyChancesAttackAction() {
         var damageValueRandom = Math.floor(Math.random() * damageValue.length)
 
         if (damageValueRandom === 0) {
-            console.log(damageValue[0])
+            //console.log(damageValue[0])
             playerHP.unshift(playerHP[0] - damageValue[0])
-            console.log("You have lost " + damageValue[0] + " HP.")
+            console.log("Deadly Chances has attacked! You have lost " + damageValue[0] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 1) {
-            console.log(damageValue[1])
+            //console.log(damageValue[1])
             playerHP.unshift(playerHP[0] - damageValue[1])
-            console.log("You have lost " + damageValue[1] + " HP.")
+            console.log("Deadly Chances has attacked! You have lost " + damageValue[1] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 2) {
-            console.log(damageValue[2])
+            //console.log(damageValue[2])
             playerHP.unshift(playerHP[0] - damageValue[2])
-            console.log("You have lost " + damageValue[2] + " HP.")
+            console.log("Deadly Chances has attacked! You have lost " + damageValue[2] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 3) {
-            console.log(damageValue[3])
+            //console.log(damageValue[3])
             playerHP.unshift(playerHP[0] - damageValue[3])
-            console.log("You have lost " + damageValue[3] + " HP.")
+            console.log("Deadly Chances has attacked! You have lost " + damageValue[3] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 4) {
-            console.log(damageValue[4])
+            //console.log(damageValue[4])
             playerHP.unshift(playerHP[0] - damageValue[4])
-            console.log("You have lost " + damageValue[4] + " HP.")
+            console.log("Deadly Chances has attacked! You have lost " + damageValue[4] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 5) {
-            console.log(damageValue[5])
+            //console.log(damageValue[5])
             playerHP.unshift(playerHP[0] - damageValue[5])
-            console.log("You have lost " + damageValue[5] + " HP.")
+            console.log("Deadly Chances has attacked! You have lost " + damageValue[5] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 6) {
-            console.log(damageValue[6])
+            //console.log(damageValue[6])
             playerHP.unshift(playerHP[0] - damageValue[6])
-            console.log("You have lost " + damageValue[6] + " HP.")
+            console.log("Deadly Chances has attacked! You have lost " + damageValue[6] + " HP.")
             //console.log(playerHP)
         }
     }
@@ -373,7 +373,7 @@ function deadlyChancesAttackAction() {
 var unforseenDirectionsDamages = [50]
 
 function unforseenDirectionsAttackAction() {
-    console.log("Unforseen Directions HP")
+    //console.log("Unforseen Directions HP")
 
     var udAttackQuestion = readlineSync.question("Would like you to attack? ")
 
@@ -384,9 +384,9 @@ function unforseenDirectionsAttackAction() {
             console.log(name + " you defeated Unforseen Directions! You may continue on your adventure.")
             unforseenDirectionsDamages.shift()
             unforseenDirectionsDamages.unshift(100)
-            console.log(unforseenDirectionsDamages)
+            //console.log(unforseenDirectionsDamages)
             playerHP.unshift(playerHP[0] + 5)
-            console.log(name + " you have received 5 HP! Also you have received a hammer!")
+            console.log(name + " you have received 5 HP! Also you have received a hammer! Your current HP is " + playerHP[0] + ".")
             playerItems.push("Hammer")
             return walkingAdventure()
         } else if (unforseenDirectionsDamages[0] > 0 && playerHP[0] > 0) {
@@ -439,7 +439,7 @@ function unforseenDirectionsAttackAction() {
             //console.log(unforseenDirectionsDamages)
         } else if (damageAmountRandom === 8) {
             //console.log(damageAmount[8])
-            unforseenDirectionsDamages.unshift(unforseenDirectionsDamagess[0] - damageAmount[8])
+            unforseenDirectionsDamages.unshift(unforseenDirectionsDamages[0] - damageAmount[8])
             console.log("You inflicted " + damageAmount[8] + " HP.")
             //console.log(unforseenDirectionsDamages)
         } else if (damageAmountRandom === 9) {
@@ -483,64 +483,64 @@ function unforseenDirectionsAttackAction() {
         var damageValueRandom = Math.floor(Math.random() * damageValue.length)
 
         if (damageValueRandom === 0) {
-            console.log(damageValue[0])
+            //console.log(damageValue[0])
             playerHP.unshift(playerHP[0] - damageValue[0])
-            console.log("You have lost " + damageValue[0] + " HP.")
+            console.log("Unforseen Directions has attacked! You have lost " + damageValue[0] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 1) {
-            console.log(damageValue[1])
+            //console.log(damageValue[1])
             playerHP.unshift(playerHP[0] - damageValue[1])
-            console.log("You have lost " + damageValue[1] + " HP.")
+            console.log("Unforseen Directions has attacked! You have lost " + damageValue[1] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 2) {
-            console.log(damageValue[2])
+            //console.log(damageValue[2])
             playerHP.unshift(playerHP[0] - damageValue[2])
-            console.log("You have lost " + damageValue[2] + " HP.")
+            console.log("Unforseen Directions has attacked! You have lost " + damageValue[2] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 3) {
-            console.log(damageValue[3])
+            //console.log(damageValue[3])
             playerHP.unshift(playerHP[0] - damageValue[3])
-            console.log("You have lost " + damageValue[3] + " HP.")
+            console.log("Unforseen Directions has attacked! You have lost " + damageValue[3] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 4) {
-            console.log(damageValue[4])
+            //console.log(damageValue[4])
             playerHP.unshift(playerHP[0] - damageValue[4])
-            console.log("You have lost " + damageValue[4] + " HP.")
+            console.log("Unforseen Directions has attacked! You have lost " + damageValue[4] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 5) {
-            console.log(damageValue[5])
+            //console.log(damageValue[5])
             playerHP.unshift(playerHP[0] - damageValue[5])
-            console.log("You have lost " + damageValue[5] + " HP.")
+            console.log("Unforseen Directions has attacked! You have lost " + damageValue[5] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 6) {
-            console.log(damageValue[6])
+            //console.log(damageValue[6])
             playerHP.unshift(playerHP[0] - damageValue[6])
-            console.log("You have lost " + damageValue[6] + " HP.")
+            console.log("Unforseen Directions has attacked! You have lost " + damageValue[6] + " HP.")
             //console.log(playerHP)
         }
     }
 }
 
-var misplacedTrusDamages = [40]
+var misplacedTrustDamages = [40]
 
 function misplacedTrustAttackAction() {
-    console.log("Misplaced Trust HP")
+    //console.log("Misplaced Trust HP")
 
     var mtAttackQuestion = readlineSync.question("Would like you to attack? ")
 
     if (mtAttackQuestion === "Yes") {
         mtAttack()
-        console.log(misplacedTrusDamages)
-        if (misplacedTrusDamages[0] <= 0) {
+        console.log(misplacedTrustDamages)
+        if (misplacedTrustDamages[0] <= 0) {
             console.log(name + " you defeated Misplaced Trust! You may continue on your adventure.")
-            misplacedTrusDamages.shift()
-            misplacedTrusDamages.unshift(100)
-            console.log(misplacedTrusDamages)
+            misplacedTrustDamages.shift()
+            misplacedTrustDamages.unshift(100)
+            //console.log(misplacedTrustDamages)
             playerHP.unshift(playerHP[0] + 5)
-            console.log(name + " you have received 5 HP! Also you have received a ruby!")
+            console.log(name + " you have received 5 HP! Also you have received a ruby! Your current HP is " + playerHP[0] + ".")
             playerItems.push("Ruby")
             return walkingAdventure()
-        } else if (misplacedTrusDamages[0] > 0 && playerHP[0] > 0) {
+        } else if (misplacedTrustDamages[0] > 0 && playerHP[0] > 0) {
             playerAttack()
             console.log(playerHP)
             if (playerHP[0] <= 0) {
@@ -555,49 +555,49 @@ function misplacedTrustAttackAction() {
         var damageAmountRandom = Math.floor(Math.random() * damageAmount.length)
 
         if (damageAmountRandom === 0) {
-            misplacedTrusDamages.unshift(misplacedTrusDamages[0] - damageAmount[0])
+            misplacedTrustDamages.unshift(misplacedTrustDamages[0] - damageAmount[0])
             console.log("You inflicted " + damageAmount[0] + " HP.")
-            //console.log(misplacedTrusDamages)
+            //console.log(misplacedTrustDamages)
         } else if (damageAmountRandom === 1) {
-            misplacedTrusDamages.unshift(misplacedTrusDamages[0] - damageAmount[1])
+            misplacedTrustDamages.unshift(misplacedTrustDamages[0] - damageAmount[1])
             console.log("You inflicted " + damageAmount[1] + " HP.")
-            //console.log(misplacedTrusDamages)
+            //console.log(misplacedTrustDamages)
         } else if (damageAmountRandom === 2) {
-            misplacedTrusDamages.unshift(misplacedTrusDamages[0] - damageAmount[2])
+            misplacedTrustDamages.unshift(misplacedTrustDamages[0] - damageAmount[2])
             console.log("You inflicted " + damageAmount[2] + " HP.")
-            //console.log(misplacedTrusDamages)
+            //console.log(misplacedTrustDamages)
         } else if (damageAmountRandom === 3) {
-            misplacedTrusDamages.unshift(misplacedTrusDamages[0] - damageAmount[3])
+            misplacedTrustDamages.unshift(misplacedTrustDamages[0] - damageAmount[3])
             console.log("You inflicted " + damageAmount[3] + " HP.")
-            //console.log(misplacedTrusDamages)
+            //console.log(misplacedTrustDamages)
         } else if (damageAmountRandom === 4) {
-            misplacedTrusDamages.unshift(misplacedTrusDamages[0] - damageAmount[4])
+            misplacedTrustDamages.unshift(misplacedTrustDamages[0] - damageAmount[4])
             console.log("You inflicted " + damageAmount[4] + " HP.")
-            //console.log(misplacedTrusDamages)
+            //console.log(misplacedTrustDamages)
         } else if (damageAmountRandom === 5) {
-            misplacedTrusDamages.unshift(misplacedTrusDamages[0] - damageAmount[5])
+            misplacedTrustDamages.unshift(misplacedTrustDamages[0] - damageAmount[5])
             console.log("You inflicted " + damageAmount[5] + " HP.")
-            //console.log(misplacedTrusDamages)
+            //console.log(misplacedTrustDamages)
         } else if (damageAmountRandom === 6) {
             //console.log(damageAmount[6])
-            misplacedTrusDamages.unshift(misplacedTrusDamages[0] - damageAmount[6])
+            misplacedTrustDamages.unshift(misplacedTrustDamages[0] - damageAmount[6])
             console.log("You inflicted " + damageAmount[6] + " HP.")
-            //console.log(misplacedTrusDamages)
+            //console.log(misplacedTrustDamages)
         } else if (damageAmountRandom === 7) {
             //console.log(damageAmount[7])
-            misplacedTrusDamages.unshift(misplacedTrusDamages[0] - damageAmount[7])
+            misplacedTrustDamages.unshift(misplacedTrustDamages[0] - damageAmount[7])
             console.log("You inflicted " + damageAmount[7] + " HP.")
-            //console.log(misplacedTrusDamages)
+            //console.log(misplacedTrustDamages)
         } else if (damageAmountRandom === 8) {
             //console.log(damageAmount[8])
-            misplacedTrusDamages.unshift(misplacedTrusDamages[0] - damageAmount[8])
+            misplacedTrustDamages.unshift(misplacedTrustDamages[0] - damageAmount[8])
             console.log("You inflicted " + damageAmount[8] + " HP.")
-            //console.log(misplacedTrusDamages)
+            //console.log(misplacedTrustDamages)
         } else if (damageAmountRandom === 9) {
             //console.log(damageAmount[9])
-            misplacedTrusDamages.unshift(misplacedTrusDamages[0] - damageAmount[9])
+            misplacedTrustDamages.unshift(misplacedTrustDamages[0] - damageAmount[9])
             console.log("You inflicted " + damageAmount[9] + " HP.")
-            //console.log(misplacedTrusDamages)
+            //console.log(misplacedTrustDamages)
         }
     }
 
@@ -634,46 +634,46 @@ function misplacedTrustAttackAction() {
         var damageValueRandom = Math.floor(Math.random() * damageValue.length)
 
         if (damageValueRandom === 0) {
-            console.log(damageValue[0])
+            //console.log(damageValue[0])
             playerHP.unshift(playerHP[0] - damageValue[0])
-            console.log("You have lost " + damageValue[0] + " HP.")
+            console.log("Misplaced Trust has attacked! You have lost " + damageValue[0] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 1) {
-            console.log(damageValue[1])
+            //console.log(damageValue[1])
             playerHP.unshift(playerHP[0] - damageValue[1])
-            console.log("You have lost " + damageValue[1] + " HP.")
+            console.log("Misplaced Trust has attacked! You have lost " + damageValue[1] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 2) {
-            console.log(damageValue[2])
+            //console.log(damageValue[2])
             playerHP.unshift(playerHP[0] - damageValue[2])
-            console.log("You have lost " + damageValue[2] + " HP.")
+            console.log("Misplaced Trust has attacked! You have lost " + damageValue[2] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 3) {
-            console.log(damageValue[3])
+            //console.log(damageValue[3])
             playerHP.unshift(playerHP[0] - damageValue[3])
-            console.log("You have lost " + damageValue[3] + " HP.")
+            console.log("Misplaced Trust has attacked! You have lost " + damageValue[3] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 4) {
-            console.log(damageValue[4])
+            //console.log(damageValue[4])
             playerHP.unshift(playerHP[0] - damageValue[4])
-            console.log("You have lost " + damageValue[4] + " HP.")
+            console.log("Misplaced Trust has attacked! You have lost " + damageValue[4] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 5) {
-            console.log(damageValue[5])
+            //console.log(damageValue[5])
             playerHP.unshift(playerHP[0] - damageValue[5])
-            console.log("You have lost " + damageValue[5] + " HP.")
+            console.log("Misplaced Trust has attacked! You have lost " + damageValue[5] + " HP.")
             //console.log(playerHP)
         } else if (damageValueRandom === 6) {
-            console.log(damageValue[6])
+            //console.log(damageValue[6])
             playerHP.unshift(playerHP[0] - damageValue[6])
-            console.log("You have lost " + damageValue[6] + " HP.")
+            console.log("Misplaced Trust has attacked! You have lost " + damageValue[6] + " HP.")
             //console.log(playerHP)
         }
     }
 }
 
 function wildDreamsFleeAction() {
-    console.log("Wild Dreams Flee")
+    //console.log("Wild Dreams Flee")
 
     var fleeAmount = ["Flee", "Cannot Flee"]
     var fleeAmountRandom = Math.floor(Math.random() * fleeAmount.length)
@@ -693,7 +693,7 @@ function wildDreamsFleeAction() {
 }
 
 function deadlyChancesFleeAction() {
-    console.log("Deadly Chances Flee")
+    //console.log("Deadly Chances Flee")
 
     var fleeAmount = ["Flee", "Cannot Flee"]
     var fleeAmountRandom = Math.floor(Math.random() * fleeAmount.length)
@@ -713,7 +713,7 @@ function deadlyChancesFleeAction() {
 }
 
 function unforseenDirectionsFleeAction() {
-    console.log("Unforseen Directions Flee")
+    //console.log("Unforseen Directions Flee")
 
     var fleeAmount = ["Flee", "Cannot Flee"]
     var fleeAmountRandom = Math.floor(Math.random() * fleeAmount.length)
@@ -733,7 +733,7 @@ function unforseenDirectionsFleeAction() {
 }
 
 function misplacedTrustFleeAction() {
-    console.log("Misplaced Trust Flee")
+    //console.log("Misplaced Trust Flee")
 
     var fleeAmount = ["Flee", "Cannot Flee"]
     var fleeAmountRandom = Math.floor(Math.random() * fleeAmount.length)
@@ -752,7 +752,7 @@ function misplacedTrustFleeAction() {
     }
 }
 
-var start = "This function works!"
+var start = "Watch out! There are monsters out there!"
 
 if (walking === "W") {
     walkingAdventure()

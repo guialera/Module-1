@@ -4,11 +4,11 @@ var name = readlineSync.question("What is your name adventurer? ")
 
 console.log("Welcome " + name + ". You are about to explore the depths of the unknown and foster new friendships and meet new foes!")
 
-var beginQuestion = readlineSync.question(name + " are you ready to begin? ")
+var beginQuestion = readlineSync.question(name + " are you ready to begin? Please enter yes to confirm! ")
 
-if (beginQuestion === "Yes") {
-    console.log("Excellent! Begin walking by pressing W!")
-} else if (beginQuestion != "Yes") {
+if (beginQuestion === "Yes" || beginQuestion === "yes") {
+    console.log("Excellent! Begin walking by pressing W! You may enter Print or p whenever walking in order to access your current HP and items!")
+} else if (beginQuestion != "Yes" || beginQuestion != "yes") {
     console.log("You do not have a choice in the matter! Begin walking by pressing W!")
 }
 
@@ -30,9 +30,11 @@ function walkingAdventure(){
 
         if (walkingAgain === "Yes") {
             return walkingAdventure()
-        } else {
+        } else if (walkingAgain === "No") {
             console.log("Thank you for playing. See you later!")
-        }
+        } else if (walkingAgain === "Print" || walkingAgain === "p" || walkingAgain === "print" || walkingAgain === "P"){
+            printStatus()
+        } else walkingAdventure()
     }
 
     //console.log(results)
@@ -47,41 +49,41 @@ function enemyAttack() {
     if (enemyRandom === 0) {
         console.log(enemy[0] + " has attacked you!")
         var attackQuestion = readlineSync.question("Would you like to flee or attack? Attack or Flee? ")
-        if (attackQuestion === "Attack") {
-            console.log("Attack")
+        if (attackQuestion === "Attack" || attackQuestion === "attack") {
+            //console.log("Attack")
             wildDreamsAttackAction()
-        } else if (attackQuestion === "Flee") {
-            console.log("Flee")
+        } else if (attackQuestion === "Flee" || attackQuestion === "flee") {
+            //console.log("Flee")
             wildDreamsFleeAction()
         }
     } else if (enemyRandom === 1) {
         console.log(enemy[1] + " has attacked you!")
         var attackQuestion = readlineSync.question("Would you like to flee or attack? Attack or Flee? ")
-        if (attackQuestion === "Attack") {
-            console.log("Attack")
+        if (attackQuestion === "Attack" || attackQuestion === "attack") {
+            //console.log("Attack")
             deadlyChancesAttackAction()
-        } else if (attackQuestion === "Flee") {
-            console.log("Flee")
+        } else if (attackQuestion === "Flee" || attackQuestion === "flee") {
+            //console.log("Flee")
             deadlyChancesFleeAction()
         }
     } else if (enemyRandom === 2) {
         console.log(enemy[2] + " has attacked you!")
         var attackQuestion = readlineSync.question("Would you like to flee or attack? Attack or Flee? ")
-        if (attackQuestion === "Attack") {
-            console.log("Attack")
+        if (attackQuestion === "Attack" || attackQuestion === "attack") {
+            //console.log("Attack")
             unforseenDirectionsAttackAction()
-        } else if (attackQuestion === "Flee") {
-            console.log("Flee")
+        } else if (attackQuestion === "Flee" || attackQuestion === "flee") {
+            //console.log("Flee")
             unforseenDirectionsFleeAction()
         }
     } else if (enemyRandom === 3) {
         console.log(enemy[3] + " has attacked you!")
         var attackQuestion = readlineSync.question("Would you like to flee or attack? Attack or Flee? ")
-        if (attackQuestion === "Attack") {
-            console.log("Attack")
+        if (attackQuestion === "Attack" || attackQuestion === "attack") {
+            //console.log("Attack")
             misplacedTrustAttackAction()
-        } else if (attackQuestion === "Flee") {
-            console.log("Flee")
+        } else if (attackQuestion === "Flee" || attackQuestion === "flee") {
+            //console.log("Flee")
             misplacedTrustFleeAction()
         }
     }
@@ -94,11 +96,11 @@ var playerItems = []
 function wildDreamsAttackAction() {
     //console.log("Wild Dreams HP")
 
-    var wdAttackQuestion = readlineSync.question("Would like you to attack? ")
+    var wdAttackQuestion = readlineSync.question("Please commence your attack or flee! Please choose attack or flee! ")
 
-    if (wdAttackQuestion === "Yes") {
+    if (wdAttackQuestion === "attack" || wdAttackQuestion === "Attack") {
         wdAttack()
-        console.log(wildDreamsDamages)
+        console.log("Wild Dream's current HP is " + wildDreamsDamages[0] + ".")
         if (wildDreamsDamages[0] <= 0) {
             console.log(name + " you defeated Wild Dreams! You may continue on your adventure.")
             wildDreamsDamages.shift()
@@ -110,12 +112,14 @@ function wildDreamsAttackAction() {
             return walkingAdventure()
         } else if (wildDreamsDamages[0] > 0 && playerHP[0] > 0) {
             playerAttack()
-            console.log(playerHP)
+            console.log(name + " your current HP is " + playerHP[0] + ".")
             if (playerHP[0] <= 0) {
                 console.log(name + " sorry you have been defeated! Please begin your adeventure again.")
             } else wildDreamsAttackAction()
         }
-    }
+    } else if (wdAttackQuestion === "flee" || wdAttackQuestion === "Flee") {
+        wildDreamsFleeAction()
+    } return 
 
     /*if (playerHP[0] <= 0) {
         console.log(name + " sorry you have been defeated! Please begin your adevnture again.")
@@ -230,11 +234,11 @@ var deadlyChancesDamages = [70]
 function deadlyChancesAttackAction() {
     //console.log("Deadly Chances HP")
 
-    var dcAttackQuestion = readlineSync.question("Would like you to attack? ")
+    var dcAttackQuestion = readlineSync.question("Please commence your attack or flee! Please choose attack or flee! ")
 
-    if (dcAttackQuestion === "Yes") {
+    if (dcAttackQuestion === "attack" || dcAttackQuestion === "Attack") {
         dcAttack()
-        console.log(deadlyChancesDamages)
+        console.log("Deadly Chance's current HP is " + deadlyChancesDamages[0] + ".")
         if (deadlyChancesDamages[0] <= 0) {
             console.log(name + " you defeated Deadly Chances! You may continue on your adventure.")
             deadlyChancesDamages.shift()
@@ -246,12 +250,14 @@ function deadlyChancesAttackAction() {
             return walkingAdventure()
         } else if (deadlyChancesDamages[0] > 0 && playerHP[0] > 0) {
             playerAttack()
-            console.log(playerHP)
+            console.log(name + " your current HP is " + playerHP[0] + ".")
             if (playerHP[0] <= 0) {
                 console.log(name + " sorry you have been defeated! Please begin your adeventure again.")
             } else deadlyChancesAttackAction()
-        }
-    }
+        } 
+    } else if (dcAttackQuestion === "flee" || dcAttackQuestion === "Flee"){
+        deadlyChancesFleeAction()
+    } return
 
     function dcAttack() {
 
@@ -375,11 +381,11 @@ var unforseenDirectionsDamages = [50]
 function unforseenDirectionsAttackAction() {
     //console.log("Unforseen Directions HP")
 
-    var udAttackQuestion = readlineSync.question("Would like you to attack? ")
+    var udAttackQuestion = readlineSync.question("Please commence your attack or flee! Please choose attack or flee! ")
 
-    if (udAttackQuestion === "Yes") {
-        dcAttack()
-        console.log(unforseenDirectionsDamages)
+    if (udAttackQuestion === "Attack" || udAttackQuestion === "attack") {
+        udAttack()
+        console.log("Unforseen Direction's current HP is " + unforseenDirectionsDamages[0] + ".")
         if (unforseenDirectionsDamages[0] <= 0) {
             console.log(name + " you defeated Unforseen Directions! You may continue on your adventure.")
             unforseenDirectionsDamages.shift()
@@ -391,14 +397,16 @@ function unforseenDirectionsAttackAction() {
             return walkingAdventure()
         } else if (unforseenDirectionsDamages[0] > 0 && playerHP[0] > 0) {
             playerAttack()
-            console.log(playerHP)
+            console.log(name + " your current HP is " + playerHP[0] + ".")
             if (playerHP[0] <= 0) {
                 console.log(name + " sorry you have been defeated! Please begin your adeventure again.")
             } else unforseenDirectionsAttackAction()
         }
+    } else if (udAttackQuestion === "flee" || udAttackQuestion === "Flee"){
+        unforseenDirectionsFleeAction()
     }
 
-    function dcAttack() {
+    function udAttack() {
 
         var damageAmount = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
         var damageAmountRandom = Math.floor(Math.random() * damageAmount.length)
@@ -526,11 +534,11 @@ var misplacedTrustDamages = [40]
 function misplacedTrustAttackAction() {
     //console.log("Misplaced Trust HP")
 
-    var mtAttackQuestion = readlineSync.question("Would like you to attack? ")
+    var mtAttackQuestion = readlineSync.question("Please commence your attack or flee! Please choose attack or flee! ")
 
-    if (mtAttackQuestion === "Yes") {
+    if (mtAttackQuestion === "attack" || mtAttackQuestion === "Attack") {
         mtAttack()
-        console.log(misplacedTrustDamages)
+        console.log("Misplaced Trust's current HP is " + misplacedTrustDamages[0] + ".")
         if (misplacedTrustDamages[0] <= 0) {
             console.log(name + " you defeated Misplaced Trust! You may continue on your adventure.")
             misplacedTrustDamages.shift()
@@ -542,12 +550,14 @@ function misplacedTrustAttackAction() {
             return walkingAdventure()
         } else if (misplacedTrustDamages[0] > 0 && playerHP[0] > 0) {
             playerAttack()
-            console.log(playerHP)
+            console.log(name + " your current HP is " + playerHP[0] + ".")
             if (playerHP[0] <= 0) {
                 console.log(name + " sorry you have been defeated! Please begin your adeventure again.")
             } else misplacedTrustAttackAction()
         }
-    }
+    } else if (mtAttackQuestion === "flee" || mtAttackQuestion === "Flee"){
+        misplacedTrustFleeAction()
+    } return
 
     function mtAttack() {
 
@@ -684,7 +694,7 @@ function wildDreamsFleeAction() {
     } else if (fleeAmountRandom === 1) {
         console.log("You cannot escape! You must attack!")
         var fleeOrAttack = readlineSync.question("Would you like to try and flee again or just attack? Flee or Attack? ")
-        if (fleeOrAttack === "Flee") {
+        if (fleeOrAttack === "Flee" || fleeOrAttack === "flee") {
             playerAttack()
             if (playerHP[0] > 0){
                 wildDreamsFleeAction()
@@ -692,7 +702,7 @@ function wildDreamsFleeAction() {
                 console.log(name + " sorry you have been defeated! Please begin your adeventure again.")
             }
             
-        } else if (fleeOrAttack === "Attack") {
+        } else if (fleeOrAttack === "Attack" || fleeOrAttack === "attack") {
             wildDreamsAttackAction()
         }
     }
@@ -752,14 +762,14 @@ function deadlyChancesFleeAction() {
     } else if (fleeAmountRandom === 1) {
         console.log("You cannot escape! You must attack!")
         var fleeOrAttack = readlineSync.question("Would you like to try and flee again or just attack? Flee or Attack? ")
-        if (fleeOrAttack === "Flee") {
+        if (fleeOrAttack === "Flee" || fleeOrAttack === "flee") {
             playerAttack()
             if (playerHP[0] > 0){
                 deadlyChancesFleeAction()
             } else if (playerHP[0] <= 0){
                 console.log(name + " sorry you have been defeated! Please begin your adeventure again.")
             }
-        } else if (fleeOrAttack === "Attack") {
+        } else if (fleeOrAttack === "Attack" || fleeOrAttack === "attack") {
             deadlyChancesAttackAction()
         }
     }
@@ -819,14 +829,14 @@ function unforseenDirectionsFleeAction() {
     } else if (fleeAmountRandom === 1) {
         console.log("You cannot escape! You must attack!")
         var fleeOrAttack = readlineSync.question("Would you like to try and flee again or just attack? Flee or Attack? ")
-        if (fleeOrAttack === "Flee") {
+        if (fleeOrAttack === "Flee" || fleeOrAttack === "flee") {
             playerAttack()
             if (playerHP[0] > 0){
                 unforseenDirectionsFleeAction()
             } else if (playerHP[0] <= 0){
                 console.log(name + " sorry you have been defeated! Please begin your adeventure again.")
             }
-        } else if (fleeOrAttack === "Attack") {
+        } else if (fleeOrAttack === "Attack" || fleeOrAttack === "attack") {
             unforseenDirectionsAttackAction()
         }
     }
@@ -886,14 +896,14 @@ function misplacedTrustFleeAction() {
     } else if (fleeAmountRandom === 1) {
         console.log("You cannot escape! You must attack!")
         var fleeOrAttack = readlineSync.question("Would you like to try and flee again or just attack? Flee or Attack? ")
-        if (fleeOrAttack === "Flee") {
+        if (fleeOrAttack === "Flee" || fleeOrAttack === "flee") {
                 playerAttack()
                 if (playerHP[0] > 0){
                     misplacedTrustFleeAction()
                 } else if (playerHP[0] <= 0){
                     console.log(name + " sorry you have been defeated! Please begin your adeventure again.")
                 }
-        } else if (fleeOrAttack === "Attack") {
+        } else if (fleeOrAttack === "Attack" || fleeOrAttack === "attack") {
             misplacedTrustAttackAction()
         }
     }
@@ -950,5 +960,14 @@ if (walking === "W") {
     walkingAdventure()
 } 
 
-//var print = ["Print", "print", "P", "p"]
-//print = console.log(playerItems)
+function printStatus(){
+    var status = ["Name: " + name + ", Player HP: " + playerHP[0] + ", Items: " + playerItems]
+    console.log(status)
+    var continueQuestion = readlineSync.question("Would you like to continue on your adventure? Please enter Yes or No! ")
+
+    if (continueQuestion === "Yes" || continueQuestion === "yes" || continueQuestion === "y") {
+        walkingAdventure()
+    } else if (continueQuestion === "No" || continueQuestion === "no" || continueQuestion === "n"){
+        console.log("Thank you for playing!")
+    } else walkingAdventure()   
+}
